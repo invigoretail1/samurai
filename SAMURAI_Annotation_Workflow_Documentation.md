@@ -271,12 +271,13 @@ Delete frames where:
 
 Sync the cleaned annotated frames with the original (non-annotated) frames.
 
-**Script:** `train_scripts/sync_folders.py`
+**Script:** `scripts/sync_folders.py`
 
 ```bash
-python /home/bel/MLP/Payment/train_scripts/sync_folders.py \
+python /home/bel/MLP/Payment/samurai/scripts/sync_folders.py \
   --raw_root /path/to/original/frames \
   --clean_root /path/to/cleaned/annotated/frames \
+  --results_root results/samurai/base_plus_2025-05-20_14-30-00 \
   --output_root /path/to/synced/output
 ```
 
@@ -288,7 +289,9 @@ python /home/bel/MLP/Payment/train_scripts/sync_folders.py \
 | `--clean_root` | Directory with cleaned frames (post-SAMURAI review) |
 | `--output_root` | Directory for synchronized output |
 
-This ensures that only frames which passed quality review are included, matched with their original (non-annotated) versions.
+This ensures that only frames which passed quality review are included, matched with their original (non-annotated) versions. 
+
+Added on May 20 2026: The annotations from the samurai are also cleaned and stored along with the images.
 
 ---
 
